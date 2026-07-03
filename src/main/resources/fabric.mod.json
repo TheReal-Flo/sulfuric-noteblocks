@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "sulfuric_noteblocks",
+  "version": "${version}",
+  "name": "Sulfuric Noteblocks",
+  "description": "Sulfur cubes can absorb note blocks: tune them like a note block and hear them play the hit block's instrument on impact.",
+  "authors": ["justfeli"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.justfeli.sulfuricNoteblocks.client.SulfuricNoteblocksDataGenerator"
+    ],
+    "client": [
+      "dev.justfeli.sulfuricNoteblocks.client.SulfuricNoteblocksClient"
+    ],
+    "main": [
+      "dev.justfeli.sulfuricNoteblocks.SulfuricNoteblocks"
+    ]
+  },
+  "mixins": [
+    "sulfuric_noteblocks.mixins.json",
+    {
+      "config": "sulfuric_noteblocks.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
